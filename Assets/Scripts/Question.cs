@@ -9,16 +9,16 @@ public class Question : MonoBehaviour
     [SerializeField] GameObject redFlag;
     [SerializeField] GameObject nextQuestion;
     bool looped = false;
-    bool answerCorrect = false;
+    public static bool answerCorrect = false;
     public void RightAnswer()
     {
         greenFlag.SetActive(true);
         answerCorrect = true;
-        gameObject.SetActive(false);
         nextQuestion.SetActive(true);
+        gameObject.SetActive(false);
         if (!looped)
         {
-            // GameManager.Instance.Score += 100;
+            QuestionManager.Instance.NextQuestion();
         }
     }
 
