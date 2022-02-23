@@ -3,13 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Question : MonoBehaviour
+public class TextQuestion : MonoBehaviour
 {
+    [SerializeField] private TMPro.TMP_InputField textInput;
+    [SerializeField] private string rightAnswer;
     [SerializeField] GameObject greenFlag;
     [SerializeField] GameObject redFlag;
     [SerializeField] GameObject nextQuestion;
+    bool answerCorrect = false;
     bool looped = false;
-    public static bool answerCorrect = false;
+
+    public void CorrectAnswer()
+    {
+        if(textInput.text == rightAnswer)
+        {
+            RightAnswer();
+        }
+        else
+        {
+            WrongAnswer();
+        }
+    }
+
     public void RightAnswer()
     {
         greenFlag.SetActive(true);
@@ -31,6 +46,4 @@ public class Question : MonoBehaviour
         nextQuestion.SetActive(true);
         looped = true;
     }
-
-    
 }
