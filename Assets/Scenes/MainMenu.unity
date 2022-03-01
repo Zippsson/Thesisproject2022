@@ -213,6 +213,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 363619489858934859, guid: b4f9ecc55756cb74392452465451fe43, type: 3}
+      propertyPath: sceneManager
+      value: 
+      objectReference: {fileID: 1038661119}
+    - target: {fileID: 363619489858934859, guid: b4f9ecc55756cb74392452465451fe43, type: 3}
+      propertyPath: questionManager
+      value: 
+      objectReference: {fileID: 921331095}
     - target: {fileID: 646217588959728459, guid: b4f9ecc55756cb74392452465451fe43, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -263,6 +271,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4f9ecc55756cb74392452465451fe43, type: 3}
+--- !u!114 &921331095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8504247553856302266, guid: b4f9ecc55756cb74392452465451fe43, type: 3}
+  m_PrefabInstance: {fileID: 689248935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d00108c0cd35e242b3b8b89ceee8db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1038661119 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8861567465336805846, guid: b4f9ecc55756cb74392452465451fe43, type: 3}

@@ -7,30 +7,25 @@ public class Question : MonoBehaviour
 {
     [SerializeField] GameObject greenFlag;
     [SerializeField] GameObject redFlag;
-    [SerializeField] GameObject nextQuestion;
-    bool looped = false;
-    public static bool answerCorrect = false;
+    [HideInInspector] public bool looped = false;
+    [HideInInspector] public bool answerCorrect = false;
+    [HideInInspector] public bool isActive = false;
+    private void Awake()
+    {
+        gameObject.SetActive(true);
+    }
     public void RightAnswer()
     {
         greenFlag.SetActive(true);
         answerCorrect = true;
-        nextQuestion.SetActive(true);
-        gameObject.SetActive(false);
-        //if (!looped)
-        //{
-        //    QuestionManager.Instance.NextQuestion();
-        //}
+        QuestionManager.Instance.NextQuestion(this);
     }
 
     public void WrongAnswer()
     {
         redFlag.SetActive(true);
         answerCorrect = false;
-        // GameManager.Instance.Score += 100;
-        gameObject.SetActive(false);
-        nextQuestion.SetActive(true);
+        QuestionManager.Instance.NextQuestion(this);
         looped = true;
     }
-
-    
 }

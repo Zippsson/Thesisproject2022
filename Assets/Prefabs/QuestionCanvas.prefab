@@ -1035,7 +1035,7 @@ GameObject:
   - component: {fileID: 3286321812954474776}
   - component: {fileID: 3286321812954474777}
   - component: {fileID: 3286321812954474778}
-  - component: {fileID: 6580466343257770134}
+  - component: {fileID: 7881802246114077952}
   m_Layer: 5
   m_Name: QuestionCanvas
   m_TagString: Untagged
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6580466343257770134
+--- !u!114 &7881802246114077952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1133,12 +1133,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3286321812954474779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fafbb9175a461c448a30337e5f8f63a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b07e2f9192f1e844b795f3df22db60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greenFlag: {fileID: 0}
-  redFlag: {fileID: 0}
-  nextQuestion: {fileID: 0}
 --- !u!1 &3286321812960511128
 GameObject:
   m_ObjectHideFlags: 0
