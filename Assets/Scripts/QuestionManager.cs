@@ -5,6 +5,7 @@ using UnityEngine;
 public class QuestionManager : MonoBehaviour
 {
     public static QuestionManager Instance { get; private set; }
+    [SerializeField] WinScreen winScript;
     [SerializeField] GameObject winScreen;
     [SerializeField] protected List<Question> questionList = new List<Question>();
     bool looped = false;
@@ -19,6 +20,7 @@ public class QuestionManager : MonoBehaviour
     {
         PopulateList();
         questionList[0].gameObject.SetActive(true);
+        winScript = GetComponent<WinScreen>();
     }
 
     /// <summary>
@@ -92,8 +94,8 @@ public class QuestionManager : MonoBehaviour
     }
     public void WinScreenActivate()
     {
-
         winScreen.gameObject.SetActive(true);
+        winScript.UpdateScore();
+        winScript.AssignStarsToScore();
     }
-
 }

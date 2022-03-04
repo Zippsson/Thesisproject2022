@@ -19,6 +19,17 @@ public class Question : MonoBehaviour
         greenFlag.SetActive(true);
         answerCorrect = true;
         QuestionManager.Instance.NextQuestion(this);
+
+        if(looped == true)
+        {
+            redFlag.SetActive(false);
+            greenFlag.SetActive(true);
+            GameManager.Instance.Score += 50;
+        }
+        else
+        {
+            GameManager.Instance.Score += 100;
+        }
     }
 
     public void WrongAnswer()
