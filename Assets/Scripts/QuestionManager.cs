@@ -20,7 +20,6 @@ public class QuestionManager : MonoBehaviour
     {
         PopulateList();
         questionList[0].gameObject.SetActive(true);
-        winScript = GetComponent<WinScreen>();
     }
 
     /// <summary>

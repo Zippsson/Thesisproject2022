@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 3286321811812220047}
   - component: {fileID: 4698343780069320594}
   - component: {fileID: 7358384826016156844}
+  - component: {fileID: 7811744777662998749}
   m_Layer: 5
   m_Name: Answer1
   m_TagString: RightAnswer
@@ -797,6 +798,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 300, y: 125}
   m_EdgeRadius: 0
+--- !u!50 &7811744777662998749
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3286321811812220049}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
 --- !u!1 &3286321812027556987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,7 +1099,7 @@ GameObject:
   - component: {fileID: 3286321812954474776}
   - component: {fileID: 3286321812954474777}
   - component: {fileID: 3286321812954474778}
-  - component: {fileID: 7881802246114077952}
+  - component: {fileID: 6881862943041352736}
   m_Layer: 5
   m_Name: QuestionCanvasDrag
   m_TagString: Untagged
@@ -1166,7 +1188,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7881802246114077952
+--- !u!114 &6881862943041352736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1175,7 +1197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3286321812954474779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b07e2f9192f1e844b795f3df22db60c, type: 3}
+  m_Script: {fileID: 11500000, guid: 31a4e6e638fe65c47890be926735fd74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   greenFlag: {fileID: 0}
@@ -1183,6 +1205,9 @@ MonoBehaviour:
   looped: 0
   answerCorrect: 0
   isActive: 0
+  answerPosition: {fileID: 0}
+  rightAnswer: {fileID: 0}
+  wrongAnswer: {fileID: 0}
 --- !u!1 &3286321812960511128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1222,7 @@ GameObject:
   - component: {fileID: 3286321812960511126}
   - component: {fileID: 8165850318733101470}
   - component: {fileID: 1951913268028506238}
+  - component: {fileID: 2627132295341708312}
   m_Layer: 5
   m_Name: Answer2
   m_TagString: WrongAnswer
@@ -1345,6 +1371,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 300, y: 125}
   m_EdgeRadius: 0
+--- !u!50 &2627132295341708312
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3286321812960511128}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
 --- !u!1 &4541283600059306057
 GameObject:
   m_ObjectHideFlags: 0

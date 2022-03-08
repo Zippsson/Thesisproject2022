@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DragAndDropQuestion : Question
 {
-    [SerializeField] private GameObject answerPosition;
+    [SerializeField] private AnswerCollisionDetection answerPosition;
     [SerializeField] private GameObject rightAnswer;
     [SerializeField] private GameObject wrongAnswer;
 
     private void Update()
     {
-        if(answerPosition.GetComponent<AnswerCollisionDetection>().answerCorrect == true)
+        if(answerPosition.answerCorrect == true)
         {
             RightAnswer();
         }
