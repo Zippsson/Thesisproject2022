@@ -2943,6 +2943,34 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 823801817017084332, guid: 07b0adee36f69ce4389046457ebc71d2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 823801817017084332, guid: 07b0adee36f69ce4389046457ebc71d2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 823801817017084332, guid: 07b0adee36f69ce4389046457ebc71d2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6597223781986636432}
+    - target: {fileID: 823801817017084332, guid: 07b0adee36f69ce4389046457ebc71d2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 823801817017084332, guid: 07b0adee36f69ce4389046457ebc71d2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendResults
+      objectReference: {fileID: 0}
+    - target: {fileID: 823801817017084332, guid: 07b0adee36f69ce4389046457ebc71d2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SendEmail, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 823801817017084332, guid: 07b0adee36f69ce4389046457ebc71d2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 985111519206565560, guid: 07b0adee36f69ce4389046457ebc71d2, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1
@@ -3057,3 +3085,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25bbd1aa21d27741ab3fc765c6f0e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6597223781986636432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597223781986636426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350f87f10a78842439348f87d7bd75ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subject: New Score Acquired
+  body: putyourscoreASASTRINGhere
+  password: 
