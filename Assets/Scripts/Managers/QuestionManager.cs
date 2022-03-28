@@ -36,7 +36,6 @@ public class QuestionManager : MonoBehaviour
     }
     public void NextQuestion(Question q)
     {
-        Debug.Log("looped: " + looped);
         if (looped == false)
         {
             if(questionList.IndexOf(q) > -1 && questionList.IndexOf(q) < questionList.Count-1)
@@ -44,7 +43,7 @@ public class QuestionManager : MonoBehaviour
                 q.gameObject.SetActive(false);
                 questionList[questionList.IndexOf(q) + 1].gameObject.SetActive(true);
             }
-            else if(questionList.IndexOf(q) == questionList.Count-1)
+            else if(questionList.IndexOf(q) == questionList.Count -1)
             {
                 q.gameObject.SetActive(false);
                 foreach(Question qu in questionList)

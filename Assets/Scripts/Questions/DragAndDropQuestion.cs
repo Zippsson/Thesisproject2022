@@ -14,5 +14,9 @@ public class DragAndDropQuestion : Question
         {
             RightAnswer();
         }
+        else if(answerPosition.answerWrong == true)
+        {
+            WrongAnswer();
+        }
     }
 }

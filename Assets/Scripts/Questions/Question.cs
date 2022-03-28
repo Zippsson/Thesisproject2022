@@ -10,6 +10,7 @@ public class Question : MonoBehaviour
     [HideInInspector] public bool looped = false;
     [HideInInspector] public bool answerCorrect = false;
     [HideInInspector] public bool isActive = false;
+    [HideInInspector] public string answerData;
     private void Awake()
     {
         gameObject.SetActive(true);
@@ -18,18 +19,20 @@ public class Question : MonoBehaviour
     {
         greenFlag.SetActive(true);
         answerCorrect = true;
-        QuestionManager.Instance.NextQuestion(this);
 
         if(looped == true)
         {
+            answerData = "X";
             redFlag.SetActive(false);
             greenFlag.SetActive(true);
             GameManager.Instance.Score += 50;
         }
         else
         {
+            answerData = "O";
             GameManager.Instance.Score += 100;
         }
+        QuestionManager.Instance.NextQuestion(this);
     }
 
     public void WrongAnswer()
