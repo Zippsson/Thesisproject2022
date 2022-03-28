@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 422.5, y: -110}
-  m_SizeDelta: {x: 700, y: 50}
+  m_AnchoredPosition: {x: 422.5, y: -165}
+  m_SizeDelta: {x: 700, y: 165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7439186079030615527
 CanvasRenderer:
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1136,6 +1136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b07e2f9192f1e844b795f3df22db60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  greenFlag: {fileID: 0}
+  redFlag: {fileID: 0}
+  looped: 0
+  answerCorrect: 0
+  isActive: 0
 --- !u!1 &3286321812960511128
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1654620643628639424}
   - component: {fileID: 1654620643628639439}
+  - component: {fileID: 4850342552399318581}
   m_Layer: 0
   m_Name: QuestionManager
   m_TagString: Untagged
@@ -43,9 +44,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d00108c0cd35e242b3b8b89ceee8db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winScript: {fileID: 0}
+  winScreen: {fileID: 0}
   questionList:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &4850342552399318581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654620643628639438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40eb1218e8b8237499647da540a207f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  question1: {fileID: 0}
+  question2: {fileID: 0}
+  question3: {fileID: 0}
+  question4: {fileID: 0}
+  question5: {fileID: 0}
+  score: 

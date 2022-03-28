@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnswerCollisionDetection : MonoBehaviour
 {
     public bool answerCorrect = false;
+    public bool answerWrong = false;
     //private void OnCollisionEnter2D(Collision2D collision)
     //{
     //    Debug.Log("Collision has been detected!");
@@ -30,6 +31,7 @@ public class AnswerCollisionDetection : MonoBehaviour
         else if (collision.gameObject.tag == "WrongAnswer")
         {
             Debug.Log("Wrong answer");
+            answerWrong = true;
         }
     }
 }

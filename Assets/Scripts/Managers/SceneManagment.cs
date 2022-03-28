@@ -17,4 +17,19 @@ public class SceneManagment : MonoBehaviour
     {
         SceneManager.LoadScene(scene.buildIndex+1);
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(scene.buildIndex);
+    }
+
+    public void GetMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void GetLevel(int levelIndex)
+    {
+        SceneManager.LoadScene(levelIndex);
+    }
 }

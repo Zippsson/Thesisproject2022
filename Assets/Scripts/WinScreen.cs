@@ -27,11 +27,15 @@ public class WinScreen : MonoBehaviour
             star1.SetActive(true);
             star2.SetActive(true);
         }
-        else
+        else if(GameManager.Instance.Score == 500)
         {
             star1.SetActive(true);
             star2.SetActive(true);
             star3.SetActive(true);
+        }
+        else
+        {
+            return;
         }
     }
 }
