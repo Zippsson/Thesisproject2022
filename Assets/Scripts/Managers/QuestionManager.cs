@@ -84,9 +84,11 @@ public class QuestionManager : MonoBehaviour
                 q.gameObject.SetActive(true);
                 break;
             }
-            else if(questionList.IndexOf(q) == questionList.Count)
+            else if(questionList.IndexOf(q) == questionList.Count - 1)
             {
                 WinScreenActivate();
+                looped = false;
+                break;
             }
         }
     }

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public QuestionManager questionManager;
     public SceneManagment sceneManager;
-    
+
     private int score;
     public int Score { get { return score; } set { score = value; } }
 
