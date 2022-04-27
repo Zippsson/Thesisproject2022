@@ -8,6 +8,8 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] WinScreen winScript;
     [SerializeField] GameObject winScreen;
     [SerializeField] protected List<Question> questionList = new List<Question>();
+    public List<bool> boolList = new List<bool>();
+    [SerializeField] AudioSource click;
     bool looped = false;
     private void Awake()
     {
@@ -20,8 +22,17 @@ public class QuestionManager : MonoBehaviour
     {
         PopulateList();
         questionList[0].gameObject.SetActive(true);
+        ResetScore();
     }
 
+    private void Update()
+    {
+        boolList = new List<bool>();
+        foreach (Question item in questionList)
+        {
+            boolList.Add(item.looped);
+        }
+    }
     /// <summary>
     /// Populates the List with Questions that it finds in the Scene, and then sets them to inactive.
     /// </summary>
@@ -36,37 +47,46 @@ public class QuestionManager : MonoBehaviour
     }
     public void NextQuestion(Question q)
     {
-        if (looped == false)
+        click.Play();
+        q.gameObject.SetActive(false);
+        bool winCheck = true;
+        foreach  (Question quest in questionList)
+        {
+            if(quest.questionState == Question.QuestionState.UNANSWERED || quest.questionState == Question.QuestionState.WRONG)
+            {
+                winCheck = false;
+            }
+        }
+        if (winCheck == false)
         {
             if(questionList.IndexOf(q) > -1 && questionList.IndexOf(q) < questionList.Count-1)
             {
-                q.gameObject.SetActive(false);
-                questionList[questionList.IndexOf(q) + 1].gameObject.SetActive(true);
+                if(questionList[questionList.IndexOf(q) + 1].questionState == Question.QuestionState.CORRECT)
+                {
+                    NextQuestion(questionList[questionList.IndexOf(q) + 1]);
+                }
+                else
+                {
+                    questionList[questionList.IndexOf(q) + 1].gameObject.SetActive(true);
+                }
             }
             else if(questionList.IndexOf(q) == questionList.Count -1)
             {
-                q.gameObject.SetActive(false);
                 foreach(Question qu in questionList)
                 {
-                    if(qu.answerCorrect == false)
+                    if(qu.questionState == Question.QuestionState.WRONG)
                     {
-                        LoopQuestions();
+                    Debug.Log("First wrong: " + qu.gameObject.name);
+                        qu.gameObject.SetActive(true);
                         break;
-                    }
-                    else
-                    {
-                        q.gameObject.SetActive(false);
-                        WinScreenActivate();
-                    }
+                    }                   
                 }
             }
         }
         else
         {
-            LoopQuestions();
+            WinScreenActivate();
         }
-        ///if next question is last in list and if not all questions has been correctly answered, 
-        ///then loop through incorrect questions until all are answered correctly.
     }
 
     public void LoopQuestions()
@@ -76,24 +96,16 @@ public class QuestionManager : MonoBehaviour
         {
             looped = true;
         }
-
-        foreach (Question q in questionList)
-        {
-            if(q.answerCorrect == false)
-            {
-                q.gameObject.SetActive(true);
-                break;
-            }
-            else if(questionList.IndexOf(q) == questionList.Count)
-            {
-                WinScreenActivate();
-            }
-        }
     }
     public void WinScreenActivate()
     {
         winScreen.gameObject.SetActive(true);
         winScript.UpdateScore();
         winScript.AssignStarsToScore();
+    }
+
+    public void ResetScore()
+    {
+        GameManager.Instance.Score = 0;
     }
 }

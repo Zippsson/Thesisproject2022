@@ -5,9 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public QuestionManager questionManager;
+    //public QuestionManager questionManager;
     public SceneManagment sceneManager;
-    
+    [HideInInspector] public bool levelFinished = false;
+    [HideInInspector] public bool returnToMenu =false;
+    [HideInInspector] public bool levelSelect = false;
+    [HideInInspector] public bool selectLevel = false;
+    [HideInInspector] public int levelNr = 0;
+
     private int score;
     public int Score { get { return score; } set { score = value; } }
 
@@ -27,5 +32,33 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         score = 0;
+    }
+
+    private void Update()
+    {
+        if(levelFinished == true)
+        {
+            sceneManager.NextLevel();
+            levelFinished = false;
+        }
+
+        if(returnToMenu == true)
+        {
+            sceneManager.GetMainMenu();
+            returnToMenu = false;
+        }
+
+        if (levelSelect == true)
+        {
+            sceneManager.GetLevel(7);
+            levelSelect = false;
+        }
+
+        if (selectLevel == true)
+        {
+            sceneManager.GetLevel(levelNr);
+            levelNr = 0;
+            selectLevel = false;
+        }
     }
 }

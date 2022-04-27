@@ -12,6 +12,13 @@ public class SendToGoogleForm : MonoBehaviour
     public Question question5;
     public TMPro.TMP_Text score;
 
+    [SerializeField] private string fieldName1;
+    [SerializeField] private string fieldName2;
+    [SerializeField] private string fieldName3;      
+    [SerializeField] private string fieldName4;
+    [SerializeField] private string fieldName5;
+    [SerializeField] private string fieldName6;
+
     private string answer1;
     private string answer2;
     private string answer3;
@@ -24,12 +31,12 @@ public class SendToGoogleForm : MonoBehaviour
     IEnumerator Post(string ans1, string ans2, string ans3, string ans4, string ans5, string score)
     {
         WWWForm Form = new WWWForm();
-        Form.AddField("entry.640247583", ans1);
-        Form.AddField("entry.634424747", ans2);
-        Form.AddField("entry.650016417", ans3);
-        Form.AddField("entry.1969298468", ans4);
-        Form.AddField("entry.1080338134", ans5);
-        Form.AddField("entry.1032776818", score);
+        Form.AddField(fieldName1, ans1);
+        Form.AddField(fieldName2, ans2);
+        Form.AddField(fieldName3, ans3);
+        Form.AddField(fieldName4, ans4);
+        Form.AddField(fieldName5, ans5);
+        Form.AddField(fieldName6, score);
 
         using (UnityWebRequest www = UnityWebRequest.Post(URL, Form))
         {
@@ -54,7 +61,7 @@ public class SendToGoogleForm : MonoBehaviour
         answer4 = question4.answerData;
         answer5 = question5.answerData;
         Score = score.text;
-
+        //TODO: Can I add ID number to score text in order to id users?
         StartCoroutine(Post(answer1, answer2, answer3, answer4, answer5, Score));
     }
 }
