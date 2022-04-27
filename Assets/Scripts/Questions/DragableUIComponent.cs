@@ -6,10 +6,13 @@ using UnityEngine.EventSystems;
 public class DragableUIComponent : EventTrigger
 {
     private Collider2D col;
-    private bool startDragging;
-    private void Start()
+
+    public bool startDragging;
+    private Vector2 startPos;
+    private void Awake()
     {
         col = GetComponent<Collider2D>();
+        startPos = transform.position;
     }
 
     void Update()
@@ -23,12 +26,18 @@ public class DragableUIComponent : EventTrigger
     public override void OnPointerDown(PointerEventData eventData)
     {
         startDragging = true;
-        col.enabled = false;
+        //col.enabled = false;
     }
 
     public override void OnPointerUp(PointerEventData eventData)
     {
         startDragging = false;
-        col.enabled = true;
+        //col.enabled = true;
+    }
+
+    public void ResetPos()
+    {
+        transform.position = startPos;
+        gameObject.GetComponent<Rigidbody2D>().position = startPos;
     }
 }

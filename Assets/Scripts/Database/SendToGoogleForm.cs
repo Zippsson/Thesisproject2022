@@ -61,7 +61,7 @@ public class SendToGoogleForm : MonoBehaviour
         answer4 = question4.answerData;
         answer5 = question5.answerData;
         Score = score.text;
-
+        //TODO: Can I add ID number to score text in order to id users?
         StartCoroutine(Post(answer1, answer2, answer3, answer4, answer5, Score));
     }
 }
